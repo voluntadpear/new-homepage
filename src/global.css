@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #ffbf69;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/quicksand-v30-latin-ext_latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 300;
+  font-display: swap;
+  src: url("/quicksand-v30-latin-ext_latin-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 500;
+  font-display: swap;
+  src: url("/quicksand-v30-latin-ext_latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 700;
+  font-display: swap;
+  src: url("/quicksand-v30-latin-ext_latin-700.woff2") format("woff2");
+}
