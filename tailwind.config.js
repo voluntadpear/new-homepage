@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
+    blurSize: {},
     extend: {
       colors: {
         "my-orange": {
@@ -20,5 +22,19 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          ["wk-backdrop-blur"](value) {
+            return { "-webkit-backdrop-filter": `blur(${value})` };
+          },
+        },
+        {
+          values: theme("backdropBlur"),
+        }
+      );
+    }),
+  ],
 };

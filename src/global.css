@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+:root {
   background-color: #ffbf69;
+  scroll-behavior: smooth;
 }
 
 @font-face {

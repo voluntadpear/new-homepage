@@ -8,7 +8,7 @@ import VideoThumbnail from "~/components/video-thumbnail";
 export default component$(() => {
   return (
     <>
-      <Header>
+      <Header id="top">
         <div class="lg:max-w-5xl lg:mx-auto">
           <h1 class="text-5xl md:text-6xl text-my-blue text-center pt-36 md:pt-72">
             Hi! I'm Guille!
@@ -70,7 +70,7 @@ export default component$(() => {
         </div>
       </Header>
       <main>
-        <section class="bg-white md:py-52">
+        <section class="bg-white md:py-52" id="posts">
           <div class="lg:max-w-5xl lg:mx-auto flex flex-col space-y-6">
             <h2 class="mt-24 md:my-24 ml-4 md:ml-10 text-3xl text-my-blue lg:text-4xl lg:ml-0">
               Latest posts ✨
@@ -94,13 +94,16 @@ export default component$(() => {
                 url="#"
                 showCTA
               />
-              <p class="text-lg pl-4 md:pl-2 md:text-xl underline text-my-blue md:col-span-full lg:text-2xl pb-8 md:pb-24">
+              <p class="text-lg pl-4 md:pl-2 md:text-xl underline text-my-blue md:col-span-full lg:text-2xl pb-8 md:pb-24 md:pt-8">
                 <a>View all blog posts</a>
               </p>
             </div>
           </div>
         </section>
-        <section class="bg-my-orange-light px-4 md:px-10 py-8 md:py-52 text-my-blue-dark">
+        <section
+          class="bg-my-orange-light px-4 md:px-10 py-8 md:py-52 text-my-blue-dark"
+          id="about"
+        >
           <div class="lg:max-w-5xl lg:mx-auto">
             <h2 class="text-3xl text-my-blue">About me 👋</h2>
             <div class="md:flex lg:justify-between lg:pt-16 lg:max-w-4xl">
@@ -159,7 +162,10 @@ export default component$(() => {
             </CtaButton>
           </div>
         </section>
-        <section class="bg-white mt-4 text-my-blue-dark md:px-10 md:py-52">
+        <section
+          class="bg-white mt-4 text-my-blue-dark md:px-10 md:py-52"
+          id="bookmarks"
+        >
           <div class="lg:max-w-5xl lg:mx-auto flex flex-col space-y-8">
             <h2 class="mt-7 ml-4 md:ml-0 md:mt-0 text-3xl text-my-blue">
               My Bookmarks 🔖
@@ -197,10 +203,13 @@ export default component$(() => {
             </p>
           </div>
         </section>
-        <section class="bg-my-orange-light px-4 py-8 text-my-blue-dark md:px-10 md:py-52">
+        <section
+          class="bg-my-orange-light px-4 py-8 text-my-blue-dark md:px-10 md:py-52"
+          id="speaking"
+        >
           <div class="lg:max-w-5xl lg:mx-auto">
             <h2 class="text-3xl text-my-blue">Speaking 🎙</h2>
-            <div class="text-my-blue md:grid md:grid-cols-2">
+            <div class="text-my-blue md:grid md:grid-cols-2 lg:gap-x-16">
               <VideoThumbnail
                 class="mt-8"
                 title="PSPDFKit SharePoint Integration"
@@ -216,14 +225,17 @@ export default component$(() => {
                 url="https://www.youtube.com/watch?v=kV-M3aZ3y9c"
               />
               <p>
-                <a class="block mt-8 md:text-xl underline lg:text-2xl">
+                <a class="block mt-8 md:text-xl underline lg:text-2xl lg:mt-24">
                   View all talks
                 </a>
               </p>
             </div>
           </div>
         </section>
-        <section class="bg-white py-14 mb-0 px-4 md:px-10 md:py-52 text-my-blue-dark">
+        <section
+          class="bg-white py-14 mb-0 px-4 md:px-10 md:py-52 text-my-blue-dark"
+          id="contact"
+        >
           <div class="lg:max-w-5xl lg:mx-auto space-y-6 md:space-y-12">
             <h2 class="text-3xl text-my-blue">Contact ✉️</h2>
             <div class="flex flex-col md:flex-row">
@@ -245,5 +257,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Guille",
 };
