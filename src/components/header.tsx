@@ -1,4 +1,4 @@
-import { component$, Slot, useContext } from "@builder.io/qwik";
+import { component$, Slot, useContext, $ } from "@builder.io/qwik";
 import { MenuContext } from "~/root";
 import { Close, Hamburger } from "./icons/qwik";
 
@@ -24,6 +24,10 @@ export default component$(() => {
 export const MobileMenu = component$(() => {
   const state = useContext(MenuContext);
 
+  const hideMenu = $(() => {
+    state.menuVisible = false;
+  });
+
   return state.menuVisible ? (
     <div class="fixed inset-0 bg-white/80 backdrop-blur wk-backdrop-blur">
       <button
@@ -39,62 +43,32 @@ export const MobileMenu = component$(() => {
       <nav class="mt-36 ml-8">
         <ul class="flex flex-col space-y-8 text-3xl text-my-blue">
           <li>
-            <a
-              href="#top"
-              onClick$={() => {
-                state.menuVisible = false;
-              }}
-            >
+            <a href="#top" onClick$={hideMenu}>
               Home 🏠
             </a>
           </li>
           <li>
-            <a
-              href="#posts"
-              onClick$={() => {
-                state.menuVisible = false;
-              }}
-            >
+            <a href="#posts" onClick$={hideMenu}>
               Latest Posts ✨
             </a>
           </li>
           <li>
-            <a
-              href="#about"
-              onClick$={() => {
-                state.menuVisible = false;
-              }}
-            >
+            <a href="#about" onClick$={hideMenu}>
               About Me 👋
             </a>
           </li>
           <li>
-            <a
-              href="#bookmarks"
-              onClick$={() => {
-                state.menuVisible = false;
-              }}
-            >
+            <a href="#bookmarks" onClick$={hideMenu}>
               My Bookmarks 🔖
             </a>
           </li>
           <li>
-            <a
-              href="#speaking"
-              onClick$={() => {
-                state.menuVisible = false;
-              }}
-            >
+            <a href="#speaking" onClick$={hideMenu}>
               Speaking 🎙
             </a>
           </li>
           <li>
-            <a
-              href="#contact"
-              onClick$={() => {
-                state.menuVisible = false;
-              }}
-            >
+            <a href="#contact" onClick$={hideMenu}>
               Contact ✉️
             </a>
           </li>

@@ -4,8 +4,23 @@ import Card from "~/components/card";
 import CtaButton from "~/components/cta-button";
 import Header from "~/components/header";
 import VideoThumbnail from "~/components/video-thumbnail";
+import bookmarks from "~/content/bookmarks";
+import { extractFrontmatter } from "~/content/local-posts";
+import posts from "~/content/posts";
 
 export default component$(() => {
+  const latestPosts = [...posts]
+    .reverse()
+    .slice(0, 6)
+    .map((post) => {
+      try {
+        new URL(post.url);
+        return post;
+      } catch (error) {
+        return extractFrontmatter(post.url);
+      }
+    });
+
   return (
     <>
       <Header id="top">
@@ -76,24 +91,14 @@ export default component$(() => {
               Latest posts ✨
             </h2>
             <div class="mx-3 md:mx-6 space-y-6 md:grid md:grid-cols-2 md:space-y-0 md:gap-x-7 lg:gap-x-12 md:gap-y-12 lg:mx-0">
-              <Card
-                title="My first blog post"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis libero quisas orci elementum, eget condimentum lorem..."
-                url="https://dev.to/abc/def"
-                showCTA
-              />
-              <Card
-                title="My second blog post"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis libero quisas orci elementum, eget condimentum lorem..."
-                url="#"
-                showCTA
-              />
-              <Card
-                title="My third blog post"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mattis libero quisas orci elementum, eget condimentum lorem..."
-                url="#"
-                showCTA
-              />
+              {latestPosts.map((post) => (
+                <Card
+                  title={post.title!}
+                  description={post.summary!}
+                  url={"url" in post ? post.url : undefined}
+                  showCTA
+                />
+              ))}
               <p class="text-lg pl-4 md:pl-2 md:text-xl underline text-my-blue md:col-span-full lg:text-2xl pb-8 md:pb-24 md:pt-8">
                 <a>View all blog posts</a>
               </p>
@@ -181,22 +186,16 @@ export default component$(() => {
               </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-3 md:gap-x-9 lg:gap-x-36 gap-y-6 md:gap-y-16 mx-2 md:mx-0">
-              <Card
-                title="Streams Standard"
-                url="https://streams.spec.whatwg.org/"
-                showCTA={false}
-              />
-              <Card
-                title="Why Efficient Hydration in JavaScript Frameworks is so Challenging"
-                url="https://dev.to/this-is-learning/why-efficient-hydration-in-javascript-frameworks-is-so-challenging-1ca3"
-                showCTA={false}
-              />
-              <Card
-                title="React 18: Streaming SSR"
-                url="https://nextjs.org/docs/advanced-features/react-18/streaming"
-                showCTA={false}
-              />
-              <Card title="React 18: Streaming SSR" url="#" showCTA={false} />
+              {[...bookmarks]
+                .reverse()
+                .slice(0, 4)
+                .map((bookmark) => (
+                  <Card
+                    title={bookmark.title}
+                    url={bookmark.url}
+                    showCTA={false}
+                  />
+                ))}
             </div>
             <p class="pl-4 md:pl-0 underline text-my-blue text-lg md:text-xl lg:text-2xl pb-8">
               <a>View all bookmarks</a>
