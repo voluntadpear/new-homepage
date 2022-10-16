@@ -42,36 +42,13 @@ export const MobileMenu = component$(() => {
       </button>
       <nav class="mt-36 ml-8">
         <ul class="flex flex-col space-y-8 text-3xl text-my-blue">
-          <li>
-            <a href="#top" onClick$={hideMenu}>
-              Home 🏠
-            </a>
-          </li>
-          <li>
-            <a href="#posts" onClick$={hideMenu}>
-              Latest Posts ✨
-            </a>
-          </li>
-          <li>
-            <a href="#about" onClick$={hideMenu}>
-              About Me 👋
-            </a>
-          </li>
-          <li>
-            <a href="#bookmarks" onClick$={hideMenu}>
-              My Bookmarks 🔖
-            </a>
-          </li>
-          <li>
-            <a href="#speaking" onClick$={hideMenu}>
-              Speaking 🎙
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick$={hideMenu}>
-              Contact ✉️
-            </a>
-          </li>
+          {menuItems.map((item) => (
+            <li>
+              <a href={item.url} onClick$={hideMenu} key={item.url}>
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
@@ -91,25 +68,41 @@ export const DesktopMenu = component$(() => {
   return (
     <nav class="hidden md:block lg:max-w-5xl mx-auto">
       <ul class="flex justify-around pt-9 text-my-blue lg:text-lg lg:pt-16 lg:justify-between">
-        <li>
-          <a href="#top">Home 🏠</a>
-        </li>
-        <li>
-          <a href="#posts">Latest Posts ✨</a>
-        </li>
-        <li>
-          <a href="#about">About Me 👋</a>
-        </li>
-        <li>
-          <a href="#bookmarks">My Bookmarks 🔖</a>
-        </li>
-        <li>
-          <a href="#speaking">Speaking 🎙</a>
-        </li>
-        <li>
-          <a href="#contact">Contact ✉️</a>
-        </li>
+        {menuItems.map((item) => (
+          <li>
+            <a href={item.url} key={item.url}>
+              {item.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
 });
+
+export const menuItems = [
+  {
+    label: "Home 🏠",
+    url: "/#top",
+  },
+  {
+    label: "Latest Posts ✨",
+    url: "/#posts",
+  },
+  {
+    label: "About Me 👋",
+    url: "/#about",
+  },
+  {
+    label: "My Bookmarks 🔖",
+    url: "/#bookmarks",
+  },
+  {
+    label: "Speaking 🎙",
+    url: "/#speaking",
+  },
+  {
+    label: "Contact ✉️",
+    url: "/#contact",
+  },
+] as const;

@@ -59,8 +59,8 @@ export default component$(() => {
                   showCTA
                 />
               ))}
-              <p class="text-lg pl-4 md:pl-2 md:text-xl underline text-my-blue md:col-span-full lg:text-2xl pb-8 md:pb-24 md:pt-8">
-                <a>View all blog posts</a>
+              <p class="text-lg pl-4 md:pl-2 md:text-xl underline hover:no-underline text-my-blue md:col-span-full lg:text-2xl pb-8 md:pb-24 md:pt-8">
+                <a href="/blog">View all blog posts</a>
               </p>
             </div>
           </div>
@@ -157,8 +157,8 @@ export default component$(() => {
                   />
                 ))}
             </div>
-            <p class="pl-4 md:pl-0 underline text-my-blue text-lg md:text-xl lg:text-2xl pb-8">
-              <a>View all bookmarks</a>
+            <p class="pl-4 md:pl-0 underline hover:no-underline text-my-blue text-lg md:text-xl lg:text-2xl pb-8">
+              <a href="/bookmarks">View all bookmarks</a>
             </p>
           </div>
         </section>
@@ -183,7 +183,7 @@ export default component$(() => {
                 ))}
               <p>
                 <a
-                  class="block mt-8 md:text-xl underline lg:text-2xl lg:mt-24"
+                  class="block mt-8 md:text-xl underline lg:text-2xl lg:mt-24 hover:no-underline"
                   href="/talks"
                 >
                   View all talks

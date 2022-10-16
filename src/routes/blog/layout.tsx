@@ -9,13 +9,13 @@ export default component$(() => {
         <div class="lg:max-w-5xl mx-auto">
           <MobileMenu />
           <DesktopMenu />
-          <h1 class="text-3xl text-my-blue mt-6 pb-6 md:ml-8 md:mt-24 lg:ml-0">
+          <h1 class="text-base md:text-2xl text-my-blue pt-16 pb-4 ml-4 md:ml-8 md:pt-28 lg:ml-0">
             Blog Posts
           </h1>
         </div>
       </header>
       <main class="bg-white pt-16 pb-24 px-3">
-        <article class="prose lg:prose-xl lg:max-w-5xl lg:mx-auto">
+        <article class="prose md:prose-lg lg:prose-xl md:max-w-xl lg:max-w-2xl md:mx-auto">
           <Slot />
         </article>
       </main>
