@@ -7,6 +7,7 @@ export function extractFrontmatter(url: string) {
     process.cwd(),
     "src",
     "routes",
+    "blog",
     url.replace("/", ""),
     "index.mdx"
   );

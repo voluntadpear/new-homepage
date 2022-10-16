@@ -4,7 +4,7 @@ import { Close, Hamburger } from "./icons/qwik";
 
 export default component$(() => {
   return (
-    <>
+    <header>
       <MobileMenu />
       <DesktopMenu />
       <header class="bg-my-orange-light pb-12 snap-start">
@@ -17,7 +17,7 @@ export default component$(() => {
       >
         <path d="m 0 96 C 1224 545 783 69 1434 69 H 0 Z" fill="#FFBF69" />
       </svg>
-    </>
+    </header>
   );
 });
 

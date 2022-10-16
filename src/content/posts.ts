@@ -9,7 +9,7 @@ export default [
     url: "/toggle-multiple-themes-css",
   },
   {
-    url: "/how-a-devtools-extensions-is-made",
+    url: "/how-a-devtools-extension-is-made",
   },
   {
     title: "Introduction to SwiftUI for React Developers (Part 1)",

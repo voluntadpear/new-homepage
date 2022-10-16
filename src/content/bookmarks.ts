@@ -19,4 +19,8 @@ export default [
     title: "React 18: Streaming SSR",
     url: "https://nextjs.org/docs/advanced-features/react-18/streaming",
   },
+  {
+    title: "Why I don't use Netscape",
+    url: "https://www.complang.tuwien.ac.at/anton/why-ancient-browsers.html",
+  },
 ];

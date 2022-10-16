@@ -5,6 +5,14 @@ title: "rm -rf overdose"
 summary: "When a tiny error makes you lose time and money"
 ---
 
+import PostHeading from "../../../components/post-heading.tsx";
+
+<PostHeading
+  title="rm -rf overdose"
+  summary="When a tiny error makes you lose time and money"
+  class="not-prose mb-16"
+/>
+
 The `rm` command on Unix and the `-rf` flags are like bread and butter. At least for me, it's hard to imagine running the `rm` command without those flags. As a matter of fact, it became like an instinct and almost as if the command was always `rm -rf`.
 
 If you know what you are doing, you can be safe running the full command like that all the time, but I should know myself better and recognize that it is going to be way better for me to think twice before hitting the Enter key. Let me tell you about what happened to me a few weeks ago when I lost a whole day of progress on a project running on a **Google Compute Cloud** instance for which I was paying **1.5 USD** an hour. Essentially, running an `rm -rf` command without giving it second thoughts made me lose around 15 USD. Which is not a lot of money compared to [what happened to Pixar for running this exact same command](https://www.theverge.com/2012/5/14/3019871/watch-this-toy-story-2-bad-backup) a few years ago.
