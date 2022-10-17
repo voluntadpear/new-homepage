@@ -2,9 +2,9 @@ import { component$, Slot, useContext, $ } from "@builder.io/qwik";
 import { MenuContext } from "~/root";
 import { Close, Hamburger } from "./icons/qwik";
 
-export default component$(() => {
+export default component$(({ id }: { id?: string }) => {
   return (
-    <header>
+    <header id={id}>
       <MobileMenu />
       <DesktopMenu />
       <header class="bg-my-orange-light pb-12 snap-start">

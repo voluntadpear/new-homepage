@@ -308,22 +308,22 @@ After _A LOT_ of debugging, I found out that I wasn't looking at the correct pla
 
 Here's the code under [the core Vue repo](https://github.com/vuejs/vue/blob/6fe07ebf5ab3fea1860c59fe7cdd2ec1b760f9b0/src/platforms/web/runtime/index.js#L51):
 
-```js{7}
-import { devtools, inBrowser } from 'core/util/index'
+```js
+import { devtools, inBrowser } from "core/util/index";
 
 /// ...
 
 if (config.devtools) {
   if (devtools) {
-    devtools.emit('init', Vue)
+    devtools.emit("init", Vue);
   } else if (
-    process.env.NODE_ENV !== 'production' &&
-    process.env.NODE_ENV !== 'test'
+    process.env.NODE_ENV !== "production" &&
+    process.env.NODE_ENV !== "test"
   ) {
-    console[console.info ? 'info' : 'log'](
-      'Download the Vue Devtools extension for a better development experience:\n' +
-      'https://github.com/vuejs/vue-devtools'
-    )
+    console[console.info ? "info" : "log"](
+      "Download the Vue Devtools extension for a better development experience:\n" +
+        "https://github.com/vuejs/vue-devtools"
+    );
   }
 }
 ```
