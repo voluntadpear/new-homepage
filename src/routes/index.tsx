@@ -122,7 +122,11 @@ export default component$(() => {
                 watch a good movie or some series on Netflix.
               </p>
             </div>
-            <CtaButton class="mt-6 md:mt-16 mx-auto">
+            <CtaButton
+              class="mt-6 md:mt-16 mx-auto"
+              href="/resume.pdf"
+              download
+            >
               Download my resume
             </CtaButton>
           </div>
@@ -205,7 +209,11 @@ export default component$(() => {
                 follow me on Twitter at&nbsp;
                 <span class="font-semibold">@voluntadpear</span>
               </p>
-              <CtaButton class="mt-6 mx-auto md:mt-0">
+              <CtaButton
+                class="mt-6 mx-auto md:mt-0"
+                href="/resume.pdf"
+                download
+              >
                 Download my resume
               </CtaButton>
             </div>
